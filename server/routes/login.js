@@ -9,7 +9,9 @@ const Usuario = require('../models/usuario');
 
 const app = express();
 
-
+// ========================================
+// Login - POST - Login normal
+// ========================================
 app.post('/login', (req, res) => {
 
     const body = req.body;
@@ -73,8 +75,10 @@ async function verify(token) {
         google: true
     };
 }
-//verify().catch(console.error);
 
+// ========================================
+// Login - POST - Login by Google
+// ========================================
 app.post('/google', async (req, res) => {
 
     let token = req.body.idtoken;
